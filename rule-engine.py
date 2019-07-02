@@ -56,9 +56,9 @@ class Discount(object):
             _min, _max = b
             if _min and _max:
                 return f"({_min} <= {a.rstrip('.range')}|float < {_max})"
-            if _min:
+            elif _min:
                 return f"({_min} <= {a.rstrip('.range')}|float)"
-            if _max:
+            elif _max:
                 return f"({a.rstrip('.range')}|float < {_max})"
             return "False"
         else:
