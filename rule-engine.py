@@ -4,7 +4,7 @@ import re
 
 class ComparableUndefined(jinja2.Undefined):
     """
-        Handle exception if any of the attribute is not provided
+    return object to Handle exception if any of the attribute is not provided
     """
     def __ne__(self, other):
         return False
