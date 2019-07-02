@@ -4,7 +4,7 @@ import re
 
 class ComparableUndefined(jinja2.Undefined):
     """
-        Handle exception if any of the 
+        Handle exception if any of the attribute is not provided
     """
     def __ne__(self, other):
         return False
@@ -99,6 +99,7 @@ if __name__ == "__main__":
 
     ]
     disc = Discount(fcs=fcs)
+    # cache this disc for time untill no filter criteria is added.
     print(disc.template,  "\n")
     discount = disc.get_discount(source="maa", pax=5, sector="blr-del", airline="indigo", price=1000)
     print("discount=", discount)
