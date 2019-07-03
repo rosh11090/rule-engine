@@ -22,6 +22,10 @@ class ComparableUndefined(jinja2.Undefined):
         return False
     def __call__(self, *args, **kwargs):
         return False
+    def __int__(self):
+        return 0
+    def __str__(self):
+        return ""
 
 jenv = jinja2.Environment(undefined=ComparableUndefined)
 
